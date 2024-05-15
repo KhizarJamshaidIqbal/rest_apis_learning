@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:rest_apis_learning/models/PostsModel.dart';
 import 'package:http/http.dart' as http;
+import 'package:rest_apis_learning/widgets/animated_custom_text.dart';
 
 class ListScreen extends StatefulWidget {
   const ListScreen({super.key});
@@ -36,7 +37,17 @@ class _ListScreenState extends State<ListScreen> {
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
-              child: Text('Loading...'),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  CircularProgressIndicator(),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  AnimatedCustomText(text: 'Loading...'),
+                ],
+              ),
             );
           } else if (snapshot.hasData) {
             return ListView.builder(
@@ -52,7 +63,7 @@ class _ListScreenState extends State<ListScreen> {
                     ),
                     title: Text(
                       postsList[index].title.toString(),
-                      style:const TextStyle(fontWeight: FontWeight.bold),
+                      style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
                     subtitle: Text(
                       postsList[index].body.toString(),

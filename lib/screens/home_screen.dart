@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:rest_apis_learning/screens/post_list/post_list.dart';
+import 'package:rest_apis_learning/screens/photos_list_api/photos_list.dart';
+import 'package:rest_apis_learning/screens/post_list_api/post_list.dart';
 import 'package:rest_apis_learning/widgets/custom_elevatedbutton.dart';
-import 'package:rest_apis_learning/screens/post_list/list_screen/list_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -22,11 +22,23 @@ class HomeScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>const PostList(),
+                      builder: (context) => const PostList(),
                     ),
                   );
                 },
               ),
+              CustomElevatedButton(
+                text: 'Photos List API',
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const PhotosList(),
+                    ),
+                  );
+                },
+              ),
+              
             ],
           ),
         ),
