@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:rest_apis_learning/screens/get_apis_screens/get_apis_screens.dart';
+import 'package:rest_apis_learning/screens/get_apis_screens/photos_list_api/photos_list.dart';
+import 'package:rest_apis_learning/screens/get_apis_screens/post_list_api/post_list.dart';
 import 'package:rest_apis_learning/widgets/custom_elevatedbutton.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class GetApisScreens extends StatelessWidget {
+  const GetApisScreens({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,27 +17,28 @@ class HomeScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CustomElevatedButton(
-                text: 'Get Api Learning',
+                text: 'Posts List API',
                 onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const GetApisScreens(),
+                      builder: (context) => const PostList(),
                     ),
                   );
                 },
               ),
-              // CustomElevatedButton(
-              //   text: 'Get Api Learning',
-              //   onPressed: () {
-              //     Navigator.push(
-              //       context,
-              //       MaterialPageRoute(
-              //         builder: (context) => const PhotosList(),
-              //       ),
-              //     );
-              //   },
-              // ),
+              CustomElevatedButton(
+                text: 'Photos List API',
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const PhotosList(),
+                    ),
+                  );
+                },
+              ),
+              
             ],
           ),
         ),
