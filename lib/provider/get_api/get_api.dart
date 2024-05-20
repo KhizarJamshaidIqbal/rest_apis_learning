@@ -12,7 +12,7 @@ class GetAPI with ChangeNotifier {
   final String _productUrl = 'https://webhook.site/6a9ddd3c-7af1-4531-85b0-d80faf979790';
   final String _userUrl = 'https://jsonplaceholder.typicode.com/users';
 
-  //List of posts and photos
+  //List of posts and photos and products and users
   final List<PostsModel> _posts = [];
   final List<PhotosModel> _photos = [];
   final List<ProductModel> _product = [];
