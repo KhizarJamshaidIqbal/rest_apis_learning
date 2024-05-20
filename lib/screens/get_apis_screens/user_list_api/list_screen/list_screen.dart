@@ -47,7 +47,7 @@ class _ListScreenState extends State<ListScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Address: ${api.user[index]['address']['city']}",
+                          "Address: ${api.user[index]['address']['street']}, ${api.user[index]['address']['suite']}, ${api.user[index]['address']['city']}, ${api.user[index]['address']['zipcode']}",
                         ),
                         Text(
                           "Geo Code: ${api.user[index]['address']['geo']['lat']}, ${api.user[index]['address']['geo']['lng']}",
